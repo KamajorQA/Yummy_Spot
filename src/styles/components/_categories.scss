@@ -18,11 +18,11 @@
         background-color: darken(#f9f9f9, 2%);
       }
 
-      &:active {
+      &:activecategory {
         background-color: darken(#f9f9f9, 5%);
       }
 
-      &.active {
+      &.activeCategory {
         background-color: #282828;
         color: #fff;
       }
