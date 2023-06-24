@@ -8,6 +8,8 @@ function ProductCard({
   types,
 }) {
   const [cartCount, setCartCount] = useState(0);
+  const [activeType, setActiveType] = useState(0);
+  const [activeSize, setActiveSize] = useState(0);
 
   const typeNames = ['тонкое', 'традиционное'];
 
@@ -22,12 +24,22 @@ function ProductCard({
       <div className="pizza-block__selector">
         <ul>
           {types?.map((availableType) => (
-            <li>{typeNames[availableType]}</li>
+            <li
+              className={activeType === availableType ? 'active' : ''}
+              onClick={() => setActiveType(availableType)}
+            >
+              {typeNames[availableType]}
+            </li>
           ))}
         </ul>
         <ul>
-          {sizes?.map((size) => (
-            <li>{size} см.</li>
+          {sizes?.map((size, index) => (
+            <li
+              className={activeSize === index ? 'active' : ''}
+              onClick={() => setActiveSize(index)}
+            >
+              {size} см.
+            </li>
           ))}
         </ul>
       </div>
